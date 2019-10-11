@@ -28,7 +28,7 @@ public class Mortgage {
 	private Double mortgageRepaid;
 	private Double mortgageOutstanding;
 	private Double emiAmount;
-	private LocalDate emiDate;
+	private Integer emiDate;
 	private LocalDate emiStartDate;
 	private LocalDate emiEndDate;
 	private Integer tenure;

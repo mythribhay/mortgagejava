@@ -1,6 +1,7 @@
 package com.hcl.ingMortgage.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,15 +48,19 @@ public class MortgageServiceImpl implements MortgageService {
 				mortgageListResponseDto.setStartDate(mortgage.getEmiStartDate());
 				mortgageListResponseDto.setMortgageOutstanding(mortgage.getMortgageOutstanding());
 				mortgageListResponseDto.setMortgageId(mortgage.getMortgageId());
+				mortgageListResponseDto.setMortgageAmount(mortgage.getMortgageAmount());
 				mortgageListResponseDto.setMortgageRepaid(mortgage.getMortgageRepaid());
 				mortgageListResponseDto.setTenure(mortgage.getTenure());
 				
 				mortgageResponseList.add(mortgageListResponseDto); });
 
+			Collections.sort(mortgageResponseList, new SortByDateComparator());
 		return mortgageResponseList;
 	}else {
 		throw new MortgageNotFoundException("No mortgage found");
 	}
 	}
+	
+	
 
 }

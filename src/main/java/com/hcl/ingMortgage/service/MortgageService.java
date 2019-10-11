@@ -7,5 +7,7 @@ import com.hcl.ingMortgage.dto.MortgageListResponseDto;
 public interface MortgageService {
 	
 	List<MortgageListResponseDto> fetchUserMortgageList(Integer userId);
+	
+	
 
 }
