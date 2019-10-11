@@ -156,7 +156,7 @@ public class LoginServiceImpl implements LoginService {
 						updateuser.setFailure(0);
 						usersDao.save(updateuser);
 					}
-					message = "Your password was reset. A temporary password was mailed to your email-id";
+					message = "failed attempts exceeded. please contact admin.";
 					loginResponse.setMessage(message);
 					loginResponse.setStatusCode(401);
 					loginResponse.setUserId(0);
