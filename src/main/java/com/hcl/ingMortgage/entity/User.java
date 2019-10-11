@@ -30,5 +30,10 @@ public class User {
 	private Long contact;
 	private String address;
 	private String password;
+<<<<<<< HEAD
+	@Column(name = "failure")
+	private int failure;
+=======
 	
+>>>>>>> origin/develop
 }
