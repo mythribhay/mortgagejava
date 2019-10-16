@@ -32,5 +32,6 @@ public class User {
 	private String password;
 	@Column(name = "failure")
 	 private int failure;
+	private boolean locker;
 	
 }

@@ -3,9 +3,11 @@ package com.hcl.ingMortgage.util;
 import java.util.Date;
 
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.hcl.ingMortgage.entity.UserOtp;
 import com.hcl.ingMortgage.repository.UserOtpRepository;
@@ -17,7 +19,7 @@ import com.warrenstrange.googleauth.ICredentialRepository;
  */
 
 
-
+@Component
 public class UserCredentials implements ICredentialRepository {
 
 	static final int tolerance = 5 * 60 * 1000;

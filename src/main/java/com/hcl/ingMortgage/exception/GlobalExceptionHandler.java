@@ -28,4 +28,25 @@ public class GlobalExceptionHandler {
 
 	}
 	
+	@ExceptionHandler(InvalidCredentialsException.class)
+	public ResponseEntity<ErrorResponse> globalExceptionHandler(InvalidCredentialsException exception) {
+
+		ErrorResponse errorResponse = new ErrorResponse();
+		errorResponse.setMessage(exception.getMessage());
+		errorResponse.setStatusCode(HttpStatus.UNAUTHORIZED.value());
+		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+
+	}
+	
+	@ExceptionHandler(OtpVerificationFailed.class)
+	public ResponseEntity<ErrorResponse> globalExceptionHandler(OtpVerificationFailed exception) {
+
+		ErrorResponse errorResponse = new ErrorResponse();
+		errorResponse.setMessage(exception.getMessage());
+		errorResponse.setStatusCode(HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+
+	}
+
+	
 }
